@@ -1,12 +1,15 @@
+//import des différents package utilisés
 const express = require('express');
 const multer = require('multer');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+//définition de constantes
 const app = express();
 const db = require("./models/index.js");
 db.sequelize.sync();
 
+//définition de l'enregistrement des fichiers
 const fileStorage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, 'images');
@@ -16,6 +19,7 @@ const fileStorage = multer.diskStorage({
     }
   });
   
+  //filtrage des types de fichier
   const fileFilter = (req, file, cb) => {
     if (
       file.mimetype === 'image/jpg' ||

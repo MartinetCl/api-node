@@ -1,3 +1,4 @@
+//définition des propriétés de notre table en BDD
 module.exports = (sequelize, Sequelize) => {
     const Utilisateur = sequelize.define('utilisateur', {
         nom: {
