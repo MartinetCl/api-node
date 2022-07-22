@@ -3,10 +3,12 @@ const Utilisateur = db.utilisateur;
 const Op = db.Sequelize.Op;// Create 
 exports.create = (req, res) => {
   const utilisateur = {
-    title: req.body.title,
-    subtitle: req.body.subtitle,
-    author: req.body.author,
-    published: req.body.published ? req.body.published : false
+    nom: req.body.nom,
+    prenom: req.body.prenom,
+    login: req.body.login,
+    password: req.body.password,
+    droit: req.body.droit,
+    image: req.body.image
   };  
   Utilisateur.create(utilisateur)
     .then(data => {

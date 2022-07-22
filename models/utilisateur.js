@@ -14,6 +14,12 @@ module.exports = (sequelize, Sequelize) => {
         },
         droit: {
             type: Sequelize.BOOLEAN
+        },
+        image: {
+            type: Sequelize.STRING
+        },
+        token: {
+            type: Sequelize.STRING
         }  });  
         return Utilisateur;
   };
